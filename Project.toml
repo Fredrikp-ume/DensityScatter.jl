@@ -1,0 +1,15 @@
+name = "DensityScatter"
+uuid = "e47f99e7-2e92-41b7-9f57-2822ae5f10aa"
+authors = ["Fredrik Pettersson <fredrik.pettersson@moffitt.org>"]
+version = "0.1.0"
+
+[deps]
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
+
+[compat]
+julia = "^1"
