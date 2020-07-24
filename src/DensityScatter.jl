@@ -2,6 +2,6 @@ module DensityScatter
 
 include("densitycalc.jl")
 
-export my_f,performBinning, calc_densities;
+export performBinning, calc_densities,fa;
 
 end # module

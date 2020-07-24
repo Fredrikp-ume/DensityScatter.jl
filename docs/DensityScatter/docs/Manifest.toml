@@ -9,7 +9,7 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 
 [[DensityScatter]]
 path = "../../.."
-uuid = "e47f99e7-2e92-41b7-9f57-2822ae5f10aa"
+uuid = "0c88c325-9891-4b47-8316-abdfe8381675"
 version = "0.1.0"
 
 [[Distributed]]
