@@ -11,4 +11,5 @@ using Test
     matrix = hcat(x,y)
 
     @test (calc_densities(matrix) |> first |> length) == rows
+    @test (smoothe(x,y) |> length) == rows
 end
