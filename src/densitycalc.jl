@@ -18,6 +18,7 @@ function logtransform(matrix)
     @pipe matrix |> _ .+ 1 |> log10.(_)
 end 
 
+# utility broadcasting function
 function replaceZeroIndexes(idxs, newval=0) 
     idxs[idxs .== 0] .= 1
 
