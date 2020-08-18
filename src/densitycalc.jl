@@ -40,6 +40,7 @@ function performBinning(matrix, resolution, columns=[1,2])
                 tc -> [CartesianIndex(a...) for a in eachrow(tc)] # get list of indexes to facilitate broadcasting
 end
 
+# run smoothing for one dimension
 function smooth1D(Y, lambda)
 
     m, n = size(Y)
