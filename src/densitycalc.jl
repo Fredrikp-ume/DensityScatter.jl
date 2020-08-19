@@ -39,7 +39,7 @@ function performBinning(matrix, resolution, columns=[1,2])
                 (tc ->  tc .* hcat(resolution...))  |> # multiply with resolution to get bin number
                 (tc -> trunc.(Int64, tc)) |> # floor to get bins as integers
                 (tc -> replaceZeroIndexes(tc, 1)) |> # handle edge case for bins on position zero
-                tc -> [CartesianIndex(a[i,:]...) for i in 1:size(a,1)] # get list of indexes to facilitate broadcasting
+                tc -> [CartesianIndex(tc[i,:]...) for i in 1:size(tc,1)] # get list of indexes to facilitate broadcasting
 end
 
 # run smoothing for one dimension
