@@ -25,6 +25,7 @@ function replaceZeroIndexes(idxs, newval=0)
     idxs
 end
 
+# make binning
 function performBinning(matrix, resolution, columns=[1,2])
     mins = minimum(matrix[:,columns], dims=1)
     maxs = maximum(matrix[:,columns], dims=1)
