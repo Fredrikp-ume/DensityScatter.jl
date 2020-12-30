@@ -71,7 +71,7 @@ http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.105.459&rep=rep1&type=p
 - `lambda:: Int64=20` : input for the smoothing function
 ...
 """
-function smoothe(x::Array{Float64,1}, y::Array{Float64,1}, lambda=20)::Array{Float64,1}
+function smoothe(x::Array{Float64,1}, y::Array{Float64,1}, lambda=20)::Tuple{Array{Float64,1},Array{Int64,1}}
 
     cartesians, densities = calc_densities(hcat(x, y))
 
@@ -85,6 +85,15 @@ function smoothe(x::Array{Float64,1}, y::Array{Float64,1}, lambda=20)::Array{Flo
         _' |>
         getDensity(_, cartesians)
 
-    return zvalues
+    uqindexes = uniqueIndexes(cartesians)
 
+    return (zvalues,uqindexes)
+
+end
+
+function uniqueIndexes(cartesians::Array{CartesianIndex{2},1})::Array{Int64,1}
+    ctindexed  = [(i,ct) for (i,ct) in enumerate(cartesians)]
+    uqindexes = unique(x->x[2],ctindexed) |> uqCtindexes -> getfield.(uqCtindexes,1)
+
+    uqindexes
 end
